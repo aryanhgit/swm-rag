@@ -7,11 +7,11 @@ import numpy as np
 from pypdf import PdfReader
 from sentence_transformers import SentenceTransformer
 
+BASE_DIR = Path(__file__).parent
 
-
-DOCS_DIR = Path(__file__).parent / "documents"
-INDEX_PATH = Path(__file__).parent / "index.faiss"
-METADATA_PATH = Path(__file__).parent / "metadata.json"
+DOCS_DIR = BASE_DIR / "documents"
+INDEX_PATH = BASE_DIR / "data" / "index.faiss"
+METADATA_PATH = BASE_DIR / "data" / "metadata.json"
 CHUNK_SIZE = 700
 CHUNK_OVERLAP = 100
 EMBEDDING_MODEL = "all-MiniLM-L6-v2"
