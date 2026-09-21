@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Waste Management Assistant</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <button class="sidebar-toggle" id="sidebarToggle"><span></span></button>
+  <div class="overlay" id="overlay"></div>
+
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <h2>History</h2>
+      <div class="history-list" id="historyList"></div>
+      <button class="clear-history" id="clearHistory">Clear history</button>
+    </aside>
+
+    <main>
+      <div class="container">
+        <header>
+          <h1>Waste Management Assistant</h1>
+          <p class="subtitle">Ask about segregation rules, disposal, and municipal guidelines</p>
+        </header>
+
+        <div class="stats-card">
+          <p class="stats-title">Waste in India at a glance</p>
+          <div class="stats-grid">
+            <div class="stat-numbers">
+              <div>
+                <div class="stat-value">145,352</div>
+                <div class="stat-label">Tonnes generated per day</div>
+              </div>
+              <div>
+                <div class="stat-value">100%</div>
+                <div class="stat-label">Collection rate</div>
+              </div>
+              <div>
+                <div class="stat-value">79%</div>
+                <div class="stat-label">Processed daily</div>
+              </div>
+              <div>
+                <div class="stat-value">89%</div>
+                <div class="stat-label">Wards with source segregation</div>
+              </div>
+            </div>
+            <div class="chart-wrap">
+              <canvas id="wasteChart"></canvas>
+            </div>
+          </div>
+          <p class="stats-source">Source: CPCB / CSE "State of Waste in India" report, FY 2023–24</p>
+        </div>
+
+        <div class="search-card">
+          <input type="text" id="question" placeholder="e.g. How should I dispose of e-waste?" autofocus>
+          <button id="submit">Ask</button>
+        </div>
+
+        <div class="suggestions" id="suggestions"></div>
+
+        <div id="output"></div>
+      </div>
+    </main>
+  </div>
+  <script src="script.js"></script>
+
+</body>
+
+</html>
